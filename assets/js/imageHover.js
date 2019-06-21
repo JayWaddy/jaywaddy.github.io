@@ -96,7 +96,7 @@ if (window.location.pathname == '/home.html'){
     
     showcase.addEventListener('mouseover', function() {
         // Hide default cursor
-        document.body.style = 'cursor: none';
+        // document.body.style = 'cursor: none';
     
         // Show newCursor
         newCursor.style.opacity = '1';
@@ -104,8 +104,8 @@ if (window.location.pathname == '/home.html'){
         for (let i = 0; i < image.length; i++) {
             // On hover
             image[i].addEventListener('mousemove', function(event) {
-                let mouseX = event.pageX - (newCursor.offsetWidth / 2),
-                    mouseY = event.pageY - (newCursor.offsetHeight / 2);
+                let mouseX = event.pageX - (newCursor.offsetWidth / 2) + 85,
+                    mouseY = event.pageY - (newCursor.offsetHeight / 2) + 60;
                 
                 newCursor.setAttribute('style', `top: ${mouseY}px; left: ${mouseX}px; opacity: 1;`);
             });

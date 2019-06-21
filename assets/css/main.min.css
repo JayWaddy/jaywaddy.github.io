@@ -427,7 +427,7 @@ hr {
     transform: translateX(0%) skewY(-6deg);
     opacity: 1; } }
   .showcase .image:not(:nth-child(1)) {
-    margin-left: 5px; }
+    margin-left: 10px; }
 
 .see-all {
   position: absolute;
@@ -702,12 +702,14 @@ button {
 
 .new-cursor {
   position: absolute;
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
+  height: 80px;
+  width: 160px;
+  border-radius: 3px;
   border-width: 10px;
   border-color: #D12DDC;
+  border-right-color: #D12DDC;
   background: #1F2433;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
