@@ -5,44 +5,77 @@
 }
 
 body {
-    display: flex;
+    // display: flex;
     flex-direction: column;
     justify-content: center;
+    background: #333;
 }
 
 // typography
-h1, h2, h3, p, li, a {
+h1, h2, h3, p, li, a, span {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400;
     text-decoration: none;
     list-style: none;
-    color: #333;
+    color: white;
 }
 
 .b {
     font-weight: 900;
 }
 
+li a {
+    color: black;
+}
+
 // containers
-.container {
-    width: 1200px;
-    // border: 1px red solid;
+.wrapper {
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    // border: solid red 1px;
 }
 
 // navbar 
 .navbar {
+    position: fixed;
     background: white;
-    width: 100%;
+    width: 100vw;
     height: 64px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    // box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    // border-bottom: 1px solid #333;
+    margin: 0 auto auto auto;
 
-    ul li {
-        display: inline-block;
-        
-        &:not(:first-child) {
-            margin-left: 20px;
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8em;
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+
+            svg {
+                transform: rotate(-6deg);
+            }
+
+            span {
+                color: black;
+                text-transform: uppercase;
+                margin-left: 5px;
+            }
         }
-    }
+        
+
+        ul li {
+            display: inline-block;
+            
+            &:not(:first-child) {
+                margin-left: 50px;
+            }
+        }
+    }    
 }
 
 // parallax backgrounds
@@ -58,10 +91,6 @@ h1, h2, h3, p, li, a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    // h1, h2 {
-    //     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    // }
 
     h1 {
         font-size: 3em;
