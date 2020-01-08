@@ -2,38 +2,52 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-    // display: flex;
     flex-direction: column;
     justify-content: center;
-    background: #333;
+    background: rgb(11, 39, 61);
 }
 
 // typography
-h1, h2, h3, p, li, a, span {
+h1, h2, h3, h4, p, li, a, span {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400;
     text-decoration: none;
     list-style: none;
+    color: black;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: uppercase;
     color: white;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: white;
+}
+
+h3 {
+    font-size: 1em;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
 .b {
     font-weight: 900;
 }
 
-li a {
-    color: black;
-}
 
 // containers
 .wrapper {
     width: 1000px;
     height: 100%;
     margin: 0 auto;
-    // border: solid red 1px;
 }
 
 // navbar 
@@ -42,8 +56,6 @@ li a {
     background: white;
     width: 100vw;
     height: 64px;
-    // box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    // border-bottom: 1px solid #333;
     margin: 0 auto auto auto;
 
     .wrapper {
@@ -66,7 +78,6 @@ li a {
                 margin-left: 5px;
             }
         }
-        
 
         ul li {
             display: inline-block;
@@ -80,6 +91,10 @@ li a {
 
 // parallax backgrounds
 .parallax {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-size: cover;
     height: 500px;
 }
@@ -87,32 +102,58 @@ li a {
 .bg-01 {
     background-image: url("/img/bg_blue.png");
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    h1 {
-        font-size: 3em;
-        text-transform: uppercase;
-    }
-
-    h2 {
-        font-size: 1.5em;
+    h1, h2 {
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     }
 }
 
 .bg-02 {
     background-image: url("/img/bg_yellow.png");
 }
+
 // sections 
 section {
-    background: #333;
+    background: white;
     color: white;
 }
+
 // projects
+.sub-header {
+    padding: 40px 0;
+    width: 400px;
+
+    h3 {
+        border-bottom: solid 3px black;
+    }
+}
+
 #projects {
-    height: 600px;
+    // height: 600px;
+
+    .project {
+        width: 70%;
+        padding-bottom: 40px;
+
+        .img {
+            height: 400px;
+            border: solid black 1px;
+
+            span {
+                color: white;
+                margin: 15px;
+            }
+        }
+        
+        h2 {
+            color: black;
+            margin: 10px 0;
+        }
+    
+        a {
+            text-decoration: underline;
+            margin: 15px 0;
+        }
+    }
 }
 
 // about
