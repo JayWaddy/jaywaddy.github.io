@@ -10,41 +10,76 @@
 	<title>Jay Waddy | UX/UI Designer</title>
 </head>
 <body>
-	<div class="navbar">
+	<section id="navbar">
 		<div class="wrapper">
-			<div class="nav-logo">
+			<a href="" class="nav-logo">
 				<svg xmlns="http://www.w3.org/2000/svg" width="27.137" height="27.143" viewBox="0 0 27.137 27.143"><path d="M27.131,27.143H0V0H27.137V27.143ZM4.735,16.115v6.449H22.314V4.872h-3.9V18.221H15.541V10.567H11.634v7.654H8.641V16.112Zm0-11.24v8.276H8.641V4.873Zm6.9-.076V7.672h3.907V4.8Z" transform="translate(0 0)" fill="#333"/></svg>
 				<span class="roll b">jay waddy</span>
-			</div>
-			<ul>
-				<li><a href="#projects">Projects</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="">Email</a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="parallax bg-01">
+			</a>
+			<nav>
+				<a href="#projects">Projects</a>
+				<a href="#about">About</a>
+				<a href="mailto:connect@jaywaddy.com">Email</a>
+			</nav>
+		</div><!-- end of .wrapper -->
+	</section> <!-- end of #navbar -->
+	<header class="parallax bg-01">
 		<h1>Jay Waddy</h1>
 		<h2>UX/UI Designer</h2>
-	</div>
+	</header>
 	<section id="projects">
 		<div class="wrapper">
-			<div class="sub-header">
-				<h3>independent ux projects</h3>
-			</div>
-			<div class="container">
-				<div class="project">
+			<header>
+				<h3>Independent UX Projects</h3>
+			</header>
+			<div class="grid">
+				<article class="project">
 					<div class="img"></div>
 					<h2>Shutters</h2>
 					<p>This design explores fun transitions between pages using – what I like to call – shutters.</p>
 					<a href="" class="read-more">Read more →</a>
-				</div>
+				</article>
+				<article class="project">
+					<div class="img"></div>
+					<h2>Project no.2</h2>
+					<p>Cursus varius nisi nascetur netus imperdiet posuere torquent, ultricies id vivamus ut mauris pulvinar dictumst.</p>
+					<a href="" class="read-more">Read more →</a>
+				</article>
+			</div><!-- end of .grid -->
+		</div><!-- end of .wrapper -->
+	</section><!-- end of #projects -->
+	<header class="parallax bg-02">
+		<div class="icon"></div>
+		<div class="icon"></div>
+		<div class="icon"></div>
+	</header>
+	<section id="about">
+		<div class="wrapper">
+			<header>
+				<h3>What Sparks the Imagination?</h3>
+			</header>
+			<div class="grid">
+				<article>
+					<p>There are probably way too many approaches of compiling designing inspiration: YouTube, Google searches, scrolling through awwwards.com, but creativity goes beyond the little material from a quick scroll on the web. Creativity can be influenced by interests beyond web design, goals for a project, or even the users needs.</p>
+					<p>Part of my drive to design is getting compiling all of my interests, thoughts, and ideas into a design and onto the web. Though there is more than enough content available, I still enjoying presenting my perspective in the process involving inspirations that go way beyond the scope of web development. If there are certain graphical elements that stick out in every day living, I try to record them and implement them in future projects.</p>
+					<p>A few big interests outside of web development are architecture, drawing/painting, and amusement parks. Though it may not be pointed out in obvious ways, these three are a huge part of my design choices; I enjoy structure and shape dynamics, invoking emotion to audiences through mediums, and I want to convey a feeling of enjoyment whenever a user clicks or scrolls through something I've created. Of course a web page can be nice to look at, but why not solidify that experience by throwing in a few animations here and there.</p>
+				</article>
+				<div class="img"></div>
+			</div>
+		</div><!-- end of .wrapper -->
+	</section><!-- end of #about -->
+	<section id="contact">
+		<div class="wrapper">
+			<div class="grid">
+				<header>
+					<h3>Let's Team Up</h3>
+					<p>The best way to reach me is through email, but don't be afraid to contact via social platforms. If you are not in need of my service, I still encourage you to <a href="mailto:connect@jaywaddy.com">send feedback</a>.</p>
+					<small>Virginia Beach, Virginia (EST -5:00)</small>
+					<h2><a href="mailto:connect@jaywaddy.com">connect@jaywaddy.com</a></h2>
+				</header>
 			</div>
 		</div>
 	</section>
-	<div class="parallax bg-02"></div>
-	<section id="about"></section>
-
 	<script src="/js/app.js"></script>
 </body>
 </html>

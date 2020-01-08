@@ -8,11 +8,11 @@
 body {
     flex-direction: column;
     justify-content: center;
-    background: rgb(11, 39, 61);
+    background: #333;
 }
 
 // typography
-h1, h2, h3, h4, p, li, a, span {
+h1, h2, h3, h4, p, li, a, span, small {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400;
     text-decoration: none;
@@ -28,20 +28,32 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 1.4em;
     color: white;
 }
 
 h3 {
     font-size: 1em;
-    font-weight: 900;
-    text-transform: uppercase;
+    // font-weight: 900;
+    // text-transform: uppercase;
+}
+
+p {
+    margin-bottom: 15px;
 }
 
 .b {
     font-weight: 900;
 }
 
+header {
+    h3 {
+        padding: 40px 0 5px 0;
+        margin-bottom: 40px;
+        width: 400px;
+        border-bottom: solid 1.5px black;
+    }
+}
 
 // containers
 .wrapper {
@@ -50,19 +62,24 @@ h3 {
     margin: 0 auto;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+}
+
 // navbar 
-.navbar {
+#navbar {
     position: fixed;
     background: white;
-    width: 100vw;
-    height: 64px;
-    margin: 0 auto auto auto;
+    width: 100%;
+    height: 60px;
 
     .wrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 0.8em;
+        font-size: 1em;
 
         .nav-logo {
             display: flex;
@@ -79,7 +96,7 @@ h3 {
             }
         }
 
-        ul li {
+        nav a {
             display: inline-block;
             
             &:not(:first-child) {
@@ -109,54 +126,66 @@ h3 {
 
 .bg-02 {
     background-image: url("/img/bg_yellow.png");
+    flex-direction: row;
+
+    .icon {
+        width: 100px;
+        height: 100px;
+        background: white;
+
+        &:not(:first-child) {
+            margin-left: 100px;
+        }
+    }
 }
 
 // sections 
 section {
     background: white;
-    color: white;
 }
 
 // projects
-.sub-header {
-    padding: 40px 0;
-    width: 400px;
-
-    h3 {
-        border-bottom: solid 3px black;
-    }
+.img {
+    height: 300px;
+    border: solid black 1px;
 }
 
 #projects {
-    // height: 600px;
+    .grid {
+        padding-bottom: 60px;
 
-    .project {
-        width: 70%;
-        padding-bottom: 40px;
-
-        .img {
-            height: 400px;
-            border: solid black 1px;
-
-            span {
-                color: white;
-                margin: 15px;
-            }
-        }
-        
-        h2 {
-            color: black;
-            margin: 10px 0;
-        }
+        .project {
+            // width: 48%;
+            padding-bottom: 40px 0;
     
-        a {
-            text-decoration: underline;
-            margin: 15px 0;
+            h2 {
+                color: black;
+                margin: 10px 0;
+            }
+
+            a {
+                text-decoration: underline;
+            }
         }
     }
 }
 
-// about
-#about {
-    height: 600px;
+// contact
+#contact {
+    padding-bottom: 100px;
+
+    // p {
+    //     margin: 5px 0;
+    // }
+
+    h2 {
+        margin-top: 10px;
+        a {
+            color: #0081E4;
+        }
+    }
+
+    p a {
+        text-decoration: underline;
+    }
 }
