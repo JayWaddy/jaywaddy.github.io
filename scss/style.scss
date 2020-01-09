@@ -81,7 +81,7 @@ header {
         align-items: center;
         font-size: 1em;
 
-        .nav-logo {
+        .nav-title {
             display: flex;
             align-items: center;
 
@@ -90,9 +90,13 @@ header {
             }
 
             span {
-                color: black;
-                text-transform: uppercase;
                 margin-left: 5px;
+            }
+
+            .roll {
+                color: #0081E4;
+                transition: opacity 0.2s ease-in-out;
+                opacity: 0;
             }
         }
 
@@ -189,3 +193,5 @@ section {
         text-decoration: underline;
     }
 }
+
+// js
