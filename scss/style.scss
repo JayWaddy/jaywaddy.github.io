@@ -34,12 +34,14 @@ h2 {
 
 h3 {
     font-size: 1em;
-    // font-weight: 900;
-    // text-transform: uppercase;
 }
 
 p {
     margin-bottom: 15px;
+}
+
+a:hover {
+    color: #0081E4;
 }
 
 .b {
@@ -50,7 +52,7 @@ header {
     h3 {
         padding: 40px 0 5px 0;
         margin-bottom: 40px;
-        width: 400px;
+        width: 480px;
         border-bottom: solid 1.5px black;
     }
 }
@@ -130,6 +132,7 @@ header {
 
 .bg-02 {
     background-image: url("/img/bg_yellow.png");
+    // background: white;
     flex-direction: row;
 
     .icon {
@@ -172,6 +175,10 @@ section {
             }
         }
     }
+}
+
+#about {
+    padding-bottom: 60px;
 }
 
 // contact
