@@ -27,7 +27,7 @@ function parallax() {
 
 // navbar rolling title effect
 function rollText() {
-    const span = document.querySelector('.roll');
+    const span = document.querySelector('#roll');
     const arr = [
         'UX/UI Designer',
         'Avid Wireframer-er',

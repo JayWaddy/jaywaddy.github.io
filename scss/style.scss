@@ -4,7 +4,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 body {
     flex-direction: column;
     justify-content: center;
@@ -19,35 +18,28 @@ h1, h2, h3, h4, p, li, a, span, small {
     list-style: none;
     color: black;
 }
-
 h1 {
     font-size: 3em;
     font-weight: 900;
     text-transform: uppercase;
     color: white;
 }
-
 h2 {
     font-size: 1.4em;
     color: white;
 }
-
 h3 {
     font-size: 1em;
 }
-
 p {
     margin-bottom: 15px;
 }
-
 a:hover {
     color: #0081E4;
 }
-
 .b {
     font-weight: 900;
 }
-
 header {
     h3 {
         padding: 40px 0 5px 0;
@@ -63,7 +55,6 @@ header {
     height: 100%;
     margin: 0 auto;
 }
-
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -76,38 +67,35 @@ header {
     background: white;
     width: 100%;
     height: 60px;
-
     .wrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-size: 1em;
-
         .nav-title {
             display: flex;
             align-items: center;
-
             svg {
                 transform: rotate(-6deg);
             }
-
             span {
                 margin-left: 5px;
             }
-
-            .roll {
+            #roll {
                 color: #0081E4;
                 transition: opacity 0.2s ease-in-out;
                 opacity: 0;
             }
         }
-
         nav a {
             display: inline-block;
             
             &:not(:first-child) {
                 margin-left: 50px;
             }
+        }
+        #menu-icon {
+            display: none;
         }
     }    
 }
@@ -121,27 +109,23 @@ header {
     background-size: cover;
     height: 500px;
 }
-
 .bg-01 {
     background-image: url("/img/bg_blue.png");
-
     h1, h2 {
         text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     }
 }
-
 .bg-02 {
     background-image: url("/img/bg_yellow.png");
-    // background: white;
-    flex-direction: row;
-
-    .icon {
-        width: 100px;
-        height: 100px;
-        background: white;
-
-        &:not(:first-child) {
-            margin-left: 100px;
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 500px;
+        .icon {
+            width: 100px;
+            height: 100px;
+            background: white;
         }
     }
 }
@@ -156,27 +140,21 @@ section {
     height: 300px;
     border: solid black 1px;
 }
-
 #projects {
     .grid {
-        padding-bottom: 60px;
-
+        padding-bottom: 20px;
         .project {
-            // width: 48%;
-            padding-bottom: 40px 0;
-    
+            padding-bottom: 40px;
             h2 {
                 color: black;
                 margin: 10px 0;
             }
-
             a {
                 text-decoration: underline;
             }
         }
     }
 }
-
 #about {
     padding-bottom: 60px;
 }
@@ -184,21 +162,86 @@ section {
 // contact
 #contact {
     padding-bottom: 100px;
-
-    // p {
-    //     margin: 5px 0;
-    // }
-
     h2 {
         margin-top: 10px;
         a {
             color: #0081E4;
         }
     }
-
     p a {
         text-decoration: underline;
     }
 }
 
-// js
+// responsiveness
+@media (max-width: 1200px) {
+    .wrapper {
+        width: 600px;
+        header h3{
+            width: 100%;
+        }
+        .grid {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+@media (max-width: 900px) {
+    nav {
+        display: none;
+    }
+    #menu-icon {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 20px;
+        span {
+            background: black;
+            width: 30px;
+            height: 2.5px;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .wrapper {
+        width: 400px;
+    }
+    .bg-02 .container {
+        width: 400px;
+    }
+}
+@media (max-width: 500px) {
+    #name, #dash {
+        display: none;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    .wrapper {
+        width: 300px;
+    }
+    .bg-02 .container {
+        width: 300px;
+        .icon {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+@media (max-width: 400px) {
+    #roll, #dash {
+        display: none;
+    }
+    .wrapper {
+        width: 200px;
+        .img {
+            height: 200px;
+        }
+    }
+    .bg-02 .container {
+        width: 200px;
+    }
+    #contact h2 {
+        font-size: 1em;
+    }
+}
