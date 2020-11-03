@@ -10,6 +10,7 @@
 
 body {
     background: #252525;
+    overflow: hidden;
 }
 
 @font-face {
@@ -48,6 +49,7 @@ button {
     width: 120px;
     height: 50px;
     cursor: pointer;
+    z-index: 1;
 }
 
 button:hover {
@@ -64,11 +66,53 @@ button .arrow {
 }
 
 body .wrapper {
-    margin: 50px;
+    margin: 50px auto;
+    width: 350px;
+    height: 90vh;
+    /* Removing the border breaks  the wrapper */
+    border: solid transparent 1px;
 }
 
 header {
-    margin-bottom: 50px;
+    position: absolute;
+    width: 350px;
+    height: 90%;
+}
+
+header .logo {
+    position: absolute;
+}
+
+header .navigation {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: auto;
+}
+
+header .navigation .menu-toggle {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+}
+
+header .navigation .menu-toggle span {
+    width: 40px;
+    height: 2px;
+    margin: 5px 0;
+    background: #ffffff;
+    content: "";
+}
+
+header .navigation .menu-toggle span:first-child {
+    margin-top: 0;
+}
+
+header .navigation .menu-toggle span:last-child {
+    margin-bottom: 0;
 }
 
 .site-title {
