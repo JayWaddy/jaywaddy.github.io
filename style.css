@@ -6,6 +6,8 @@
 :root {
     --primary: #0BBC7F;
     --secondary: #FFFF00;
+
+    --wrapper-width: 300px;
 }
 
 body {
@@ -68,12 +70,12 @@ button .arrow {
 
 body .wrapper {
     margin: 0 auto;
-    width: 300px;
+    width: var(--wrapper-width);
 }
 
 .logo {
     position: fixed;
-    top: 5%;
+    top: 3%;
 }
 
 nav {
@@ -82,8 +84,8 @@ nav {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    width: 300px;
-    bottom: 5%;
+    width: var(--wrapper-width);
+    bottom: 3%;
     z-index: 10;
 }
 
@@ -101,7 +103,7 @@ nav ul li {
     display: inline-block;
 }
 
-nav .menu-toggle {
+nav .menu-icon {
     display: fixed;
     flex-direction: column;
     justify-content: space-between;
@@ -109,7 +111,7 @@ nav .menu-toggle {
     cursor: pointer;
 }
 
-nav .menu-toggle span {
+nav .menu-icon span {
     display: flex;
     width: 30px;
     height: 2px;
@@ -118,7 +120,7 @@ nav .menu-toggle span {
     content: "";
 }
 
-nav .menu-toggle span:nth-child(2) {
+nav .menu-icon span:nth-child(2) {
     margin: 8px 0;
 }
 
