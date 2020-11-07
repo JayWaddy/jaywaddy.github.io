@@ -7,7 +7,7 @@
     --primary: #0BBC7F;
     --secondary: #FFFF00;
 
-    --wrapper-width: 300px;
+    --wrapper-width: 85%;
 }
 
 body {
@@ -23,8 +23,8 @@ body {
 }
 
 @font-face {
-    font-family: "Ubuntu-Regular";
-    src: url("/fonts/Ubuntu-Regular.ttf");
+    font-family: "Ubuntu-Light";
+    src: url("/fonts/Ubuntu-Light.ttf");
 }
 
 h1 {
@@ -42,7 +42,7 @@ h2 {
 }
 
 p, a, button {
-    font-family: "Ubuntu-Regular";
+    font-family: "Ubuntu-Light";
     font-size: 12px;
     color: #ffffff;
 }
@@ -69,6 +69,9 @@ button .arrow {
 }
 
 body .wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
     width: var(--wrapper-width);
 }
@@ -76,22 +79,21 @@ body .wrapper {
 .logo {
     position: fixed;
     top: 3%;
+    z-index: 10;
 }
 
 nav {
     position: fixed;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     width: var(--wrapper-width);
-    bottom: 3%;
-    z-index: 10;
+    bottom: 5%;
 }
 
 nav ul  {
     margin: 0 auto;
-    display: none;
 }
 
 nav ul li a {
@@ -103,76 +105,48 @@ nav ul li {
     display: inline-block;
 }
 
-nav .menu-icon {
-    display: fixed;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 30px;
-    cursor: pointer;
+.menu-icon-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
 }
 
-nav .menu-icon span {
+.menu-icon {
+    position: fixed;
+    bottom: 3%;
+    margin-left: auto;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.menu-icon span {
     display: flex;
-    width: 30px;
+    width: 25px;
     height: 2px;
-    margin: 5px 0;
     background: #ffffff;
     content: "";
 }
 
-nav .menu-icon span:nth-child(2) {
-    margin: 8px 0;
+.menu-icon span:nth-child(2) {
+    margin: 6px 0;
+}
+
+.close-menu-icon {
+    position: fixed;
+}
+
+.main-content {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    transition: transform 0.6s cubic-bezier(0.87, 0, 0.13, 1);
+    z-index: 2;
 }
 
 .site-title {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 25vh auto 0 auto;
-}
-
-.site-title .top-text {
-    margin-bottom: 10px;
-    z-index: 2;
-}
-
-.site-title .bottom-text {
-    margin: 10px 0 0 auto;
-    z-index: 2;
-}
-
-.site-title .outline-effect {
-    position: relative;
     text-align: center;
-}
-
-.site-title .outline-effect .outlined-text {
-    position: absolute;
-    -webkit-text-stroke: 1px #ffffff;
-    color: transparent;
-    transform: translateY(-100%);
-    z-index: 2;
-}
-
-.site-title .green-box {
-    position: absolute;
-    right: 0;
-    height: 80px;
-    background: var(--primary);
-    transform: translateY( 65px);
-    animation: green-box-pulsing 30s ease infinite;
-    z-index: 1;
-}
-
-.site-title .green-box:first-child {
-    left: 0;
-    transform: translateY(-15px);
-}
-
-@keyframes green-box-pulsing {
-    0% { width: 10%; }
-    50% { width: 100%; }
-    100% { width: 10%; }
+    width: 100%;
+    margin: 30vh auto 0 auto;
 }
 
 .double-cta {
@@ -187,7 +161,7 @@ nav .menu-icon span:nth-child(2) {
     background: #52565A;
     width: 100vw;
     height: 100vh;
+    margin: auto;
     top: 0;
-    left: 0;
     z-index: -1;
 }
