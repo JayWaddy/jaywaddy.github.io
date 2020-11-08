@@ -1,6 +1,7 @@
 (function detectUserSwipeDirection() {
     let touchStart = 0,
-        touchEnd = 0;
+        touchEnd = 0,
+        touchDifference = 0;
     
     window.addEventListener("touchstart", function (event) {
         touchStart = event.changedTouches[0].screenY;
@@ -8,8 +9,9 @@
 
     window.addEventListener("touchend", function (event) {
         touchEnd = event.changedTouches[0].screenY;
-        if (touchStart < touchEnd) userSwipedDown();
-        if (touchStart > touchEnd) userSwipedUp();
+        touchDifference = Math.abs(touchStart - touchEnd);
+        if ((touchStart < touchEnd) && (touchDifference > 30)) userSwipedDown();
+        if ((touchStart > touchEnd) && (touchDifference > 30)) userSwipedUp();
     });
 
     function userSwipedDown() {
@@ -24,13 +26,12 @@
 
     function userSwipedUp() {
         // IF ON LANDING PAGE:
-        // 1. set a timeout function on redirecting the page
-        // 2. animate current content off of the screen
-        // 3. redirect to work page
+        // 1. animate current content off of the screen
+        // 2. redirect to work page
+        if (window.location.pathname === "/") setTimeout(() => window.location.pathname = "/work.html", 500);
 
         // IF ON WORK PAGE:
         // 1. animate new content overtop of old content
         // 2. remove old content
-        console.log("user swiped up");
     }
 })();

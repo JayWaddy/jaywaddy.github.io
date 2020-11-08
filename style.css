@@ -6,7 +6,6 @@
 :root {
     --primary: #0BBC7F;
     --secondary: #FFFF00;
-
     --wrapper-width: 85%;
 }
 
@@ -117,14 +116,16 @@ nav ul li {
     margin-left: auto;
     cursor: pointer;
     z-index: 10;
+    transition: 0.8s cubic-bezier(0.87, 0, 0.13, 1);
 }
 
 .menu-icon span {
     display: flex;
     width: 25px;
-    height: 2px;
+    height: 3px;
     background: #ffffff;
     content: "";
+    transition: 0.5s cubic-bezier(0.87, 0, 0.13, 1);
 }
 
 .menu-icon span:nth-child(2) {
@@ -132,7 +133,22 @@ nav ul li {
 }
 
 .close-menu-icon {
-    position: fixed;
+    width: 25px;
+    transform: rotate(-90deg);
+}
+
+.close-menu-icon span:first-child {
+    width: 0;
+    opacity: 0;
+}
+
+.close-menu-icon span:nth-child(2) {
+    margin: 0;
+    transform: rotate(45deg);
+}
+
+.close-menu-icon span:last-child {
+    transform: rotate(-45deg) translate(1px, -1px);
 }
 
 .main-content {
