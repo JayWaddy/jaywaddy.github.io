@@ -21,7 +21,7 @@
         // IF ON WORK PAGE:
         // 1. animate new content overtop of old content
         // 2. remove old content
-        console.log("user swiped down");
+        if (window.location.pathname !== "/") setTimeout(() => window.location.pathname = "/", 500);
     }
 
     function userSwipedUp() {

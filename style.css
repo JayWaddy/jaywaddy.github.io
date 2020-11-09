@@ -6,13 +6,15 @@
 :root {
     --primary: #0BBC7F;
     --secondary: #FFFF00;
+    --background: #252525;
     --wrapper-width: 85%;
+    --ease: cubic-bezier(0.87, 0, 0.13, 1);
 }
 
 body {
     width: 100%;
     height: 100vh;
-    background: #252525;
+    background: var(--background);
     overflow: hidden;
 }
 
@@ -112,20 +114,19 @@ nav ul li {
 
 .menu-icon {
     position: fixed;
-    bottom: 3%;
+    bottom: 5%;
     margin-left: auto;
     cursor: pointer;
-    z-index: 10;
-    transition: 0.8s cubic-bezier(0.87, 0, 0.13, 1);
+    transition: 0.8s var(--ease);
 }
 
 .menu-icon span {
     display: flex;
     width: 25px;
-    height: 3px;
+    height: 2px;
     background: #ffffff;
     content: "";
-    transition: 0.5s cubic-bezier(0.87, 0, 0.13, 1);
+    transition: 0.5s var(--ease);
 }
 
 .menu-icon span:nth-child(2) {
@@ -155,8 +156,8 @@ nav ul li {
     position: relative;
     height: 100vh;
     overflow: hidden;
-    transition: transform 0.6s cubic-bezier(0.87, 0, 0.13, 1);
-    z-index: 2;
+    transition: transform 0.6s var(--ease);
+    box-shadow: 0 0 50px rgba(0,0,0,0.2);
 }
 
 .site-title {
@@ -165,11 +166,38 @@ nav ul li {
     margin: 30vh auto 0 auto;
 }
 
-.double-cta {
+.cta-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 270px;
     margin: 40px auto 0 auto;
+}
+
+.scroll-indicator {
+    display: flex;
+    width: 2px;
+    height: 100px;
+    margin: 15vh auto 0 auto;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.scroll-indicator span {
+    position: inherit;
+    display: flex;
+    background: #ffffff;
+    width: 2px;
+    height: 100%;
+    content: "";
+    /* transition: 0.5s; */
+    animation: scroll-indicator 5s var(--ease) infinite;
+}
+
+@keyframes scroll-indicator {
+    0% {opacity: 0;}
+    30% {opacity: 1; height: 100%;}
+    50% {height: 30%;}
+    70% {opacity: 1; height: 30%;}
+    100% {opacity: 0; height: 30%;}
 }
 
 .background-image {
@@ -179,5 +207,4 @@ nav ul li {
     height: 100vh;
     margin: auto;
     top: 0;
-    z-index: -1;
 }

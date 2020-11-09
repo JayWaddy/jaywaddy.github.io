@@ -10,15 +10,11 @@
             currentURL = window.location.href;
             event.preventDefault();
             closeMenu();
-            if (this.href !== currentURL) goToNewURL(this, 500);
-            
-            function goToNewURL(target, delay) {
-                setTimeout(() => window.location = target.href, delay);
-            }
+            if (this.href !== currentURL) setTimeout(() => window.location = this.href, 500);
         });
     }
 
-    menuIcon.addEventListener("click", function () {
+    menuIcon.addEventListener("click", function() {
         menuIsToggled = !menuIsToggled;
         menuIsToggled ? openMenu() : closeMenu();
     });
