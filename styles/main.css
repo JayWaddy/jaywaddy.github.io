@@ -7,15 +7,9 @@
     --primary: #0BBC7F;
     --secondary: #FFFF00;
     --background: #252525;
+    --text: #ffffff;
     --wrapper-width: 85%;
     --ease: cubic-bezier(0.87, 0, 0.13, 1);
-}
-
-body {
-    width: 100%;
-    height: 100vh;
-    background: var(--background);
-    overflow: hidden;
 }
 
 @font-face {
@@ -32,25 +26,25 @@ h1 {
     font-family: "Ubuntu-Bold";
     font-size: 34px;
     text-transform: uppercase;
-    color: #ffffff;
+    color: var(--text);
 }
 
 h2 {
     font-family: "Ubuntu-Bold";
     font-size: 12px;
     text-transform: uppercase;
-    color: #ffffff;
+    color: var(--text);
 }
 
 p, a, button {
     font-family: "Ubuntu-Light";
     font-size: 12px;
-    color: #ffffff;
+    color: var(--text);
 }
 
 button {
     background: transparent;
-    border: solid #ffffff 2px;
+    border: solid var(--text) 2px;
     width: 120px;
     height: 50px;
     cursor: pointer;
@@ -61,15 +55,23 @@ button:hover {
     border: none;
 }
 
-button .arrow {
-    position: relative;
-    width: 5px;
-    height: 5px;
-    background: #ffffff;
-    content: "";
+body {
+    width: 100%;
+    height: 100vh;
+    background: var(--background);
+    overflow: hidden;
 }
 
-body .wrapper {
+.background-image {
+    position: absolute;
+    background: #52565A;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    top: 0;
+}
+
+.wrapper {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -124,7 +126,7 @@ nav ul li {
     display: flex;
     width: 25px;
     height: 2px;
-    background: #ffffff;
+    background: var(--text);
     content: "";
     transition: 0.5s var(--ease);
 }
@@ -160,12 +162,6 @@ nav ul li {
     box-shadow: 0 0 50px rgba(0,0,0,0.2);
 }
 
-.site-title {
-    text-align: center;
-    width: 100%;
-    margin: 30vh auto 0 auto;
-}
-
 .cta-wrapper {
     display: flex;
     justify-content: center;
@@ -188,23 +184,19 @@ nav ul li {
     width: 2px;
     height: 100%;
     content: "";
-    /* transition: 0.5s; */
     animation: scroll-indicator 5s var(--ease) infinite;
 }
 
-@keyframes scroll-indicator {
-    0% {opacity: 0;}
-    30% {opacity: 1; height: 100%;}
-    50% {height: 30%;}
-    70% {opacity: 1; height: 30%;}
-    100% {opacity: 0; height: 30%;}
+/* Animation Classes for JavaScript */
+.navigation-menu-scale {
+    transform: scale(0.7);
 }
 
-.background-image {
-    position: absolute;
-    background: #52565A;
-    width: 100vw;
-    height: 100vh;
-    margin: auto;
-    top: 0;
+/* Animations */
+@keyframes scroll-indicator {
+    0% { opacity: 0; }
+    30% { opacity: 1; height: 100%; }
+    50% { height: 30%; }
+    70% { opacity: 1; height: 30%; }
+    100% { opacity: 0; height: 30%; }
 }
