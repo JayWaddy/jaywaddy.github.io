@@ -8,6 +8,7 @@ menuIcon.addEventListener("click", function() {
 });
 
 function openMenu() {
+    menuIsToggled = true;
     mainContent.classList.add("navigation-menu-scale");
     menuIcon.classList.add("close-menu-icon");
 }
