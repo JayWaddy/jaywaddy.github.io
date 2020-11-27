@@ -11,38 +11,37 @@
 
     --wrapper-width: 85%;
 
-    --ease: cubic-bezier(0.87, 0, 0.13, 1);
-    --page-transition: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease: cubic-bezier(0, 0.55, 0.45, 1);
     --in-duration: 0.8s;
     --out-duration: 0.5s;
 }
 
 @font-face {
-    font-family: "Ubuntu-Bold";
+    font-family: "Bold";
     src: url("/fonts/Ubuntu-Bold.ttf");
 }
 
 @font-face {
-    font-family: "Ubuntu-Regular";
-    src: url("/fonts/Ubuntu-Light.ttf");
+    font-family: "Regular";
+    src: url("/fonts/Ubuntu-Regular.ttf");
 }
 
 h1 {
-    font-family: "Ubuntu-Bold";
+    font-family: "Bold";
     font-size: 34px;
     text-transform: uppercase;
     color: var(--text);
 }
 
 h2 {
-    font-family: "Ubuntu-Bold";
+    font-family: "Bold";
     font-size: 12px;
     text-transform: uppercase;
     color: var(--text);
 }
 
 h3 {
-    font-family: "Ubuntu-Regular";
+    font-family: "Regular";
     font-size: 12px;
     text-transform: uppercase;
     margin-top: 10px;
@@ -50,7 +49,7 @@ h3 {
 }
 
 p, a, button, span {
-    font-family: "Ubuntu-Regular";
+    font-family: "Regular";
     font-size: 12px;
     color: var(--text);
 }
@@ -71,7 +70,7 @@ button:hover {
 body {
     width: 100%;
     height: 100vh;
-    background: var(--background);
+    background: var(--primary);
     overflow: hidden;
 }
 
@@ -173,12 +172,44 @@ nav ul li {
     transform: rotate(-45deg) translate(1px, -1px);
 }
 
+.scroll-icon-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.scroll-icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 20px;
+    height: 36px;
+    border: solid var(--text) 2px;
+    border-radius: 100px;
+    content: "";
+}
+
+.scroll-icon-ball {
+    background: var(--text);
+    width: 6px;
+    height: 6px;
+    margin-top: 6px;
+    border-radius: 100%;
+    animation: scroll-icon 5s ease infinite;
+    content: "";
+}
+
 .main-content {
     position: relative;
     height: 100vh;
     overflow: hidden;
-    transition: transform 0.6s var(--ease);
+    transition: var(--out-duration) var(--ease);
     box-shadow: 0 0 50px rgba(0,0,0,0.2);
+}
+
+.main-content-border {
+    border-radius: 4px;
 }
 
 .cta-wrapper {
@@ -188,24 +219,6 @@ nav ul li {
     margin: 40px auto 0 auto;
 }
 
-.scroll-indicator {
-    display: flex;
-    width: 2px;
-    height: 100px;
-    margin: 15vh auto 0 auto;
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.scroll-indicator span {
-    position: inherit;
-    display: flex;
-    background: #ffffff;
-    width: 2px;
-    height: 100%;
-    content: "";
-    animation: scroll-indicator 5s var(--ease) infinite;
-}
-
 /* Animation Classes for JavaScript */
 .navigation-menu-scale {
     transform: scale(0.7);
@@ -213,7 +226,7 @@ nav ul li {
 
 .transition--enter {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
 }
 
 .transition--enter-active {
@@ -224,15 +237,14 @@ nav ul li {
 
 .transition--exit-active {
     opacity: 0;
-    transform: translateY(-30px);
-    transition:  var(--out-duration) var(--ease);
+    transform: translateY(-20px);
+    transition:  transform var(--out-duration) var(--ease), opacity 0.3s var(--ease);
 }
 
 /* Animations */
-@keyframes scroll-indicator {
-    0% { opacity: 0; }
-    30% { opacity: 1; height: 100%; }
-    50% { height: 30%; }
-    70% { opacity: 1; height: 30%; }
-    100% { opacity: 0; height: 30%; }
+@keyframes scroll-icon {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(18px); }
+    70% { transform: translateY(18px); }
+    100% { transform: translateY(0); }
 }

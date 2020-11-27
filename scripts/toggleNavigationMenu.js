@@ -9,12 +9,12 @@ menuIcon.addEventListener("click", function() {
 
 function openMenu() {
     menuIsToggled = true;
-    mainContent.classList.add("navigation-menu-scale");
+    mainContent.classList.add("navigation-menu-scale", "main-content-border");
     menuIcon.classList.add("close-menu-icon");
 }
 
 function closeMenu() {
     menuIsToggled = false;
-    mainContent.classList.remove("navigation-menu-scale");
+    mainContent.classList.remove("navigation-menu-scale", "main-content-border");
     menuIcon.classList.remove("close-menu-icon");
 }
