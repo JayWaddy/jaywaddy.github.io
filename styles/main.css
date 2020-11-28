@@ -7,11 +7,14 @@
     --primary: #0BBC7F;
     --secondary: #FFFF00;
     --background: #252525;
+    --img: #52565A;
     --text: #ffffff;
 
     --wrapper-width: 85%;
 
     --ease: cubic-bezier(0, 0.55, 0.45, 1);
+    --soft: cubic-bezier(0.85, 0, 0.15, 1);
+
     --in-duration: 0.8s;
     --out-duration: 0.5s;
 }
@@ -30,6 +33,7 @@ h1 {
     font-family: "Bold";
     font-size: 34px;
     text-transform: uppercase;
+    text-align: center;
     color: var(--text);
 }
 
@@ -69,16 +73,20 @@ button:hover {
 
 body {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: var(--primary);
+    overflow: hidden;
+}
+
+main {
     overflow: hidden;
 }
 
 .background-image {
     position: absolute;
-    background: #52565A;
+    background: linear-gradient(15deg, rgb(47, 51, 54) 0%, rgb(18, 24, 29) 70%);;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     margin: auto;
     top: 0;
 }
@@ -101,6 +109,14 @@ body {
 
 .header span {
     margin-left: 10px;
+}
+
+.page-section {
+    margin-top: 100px;
+}
+
+.page-section-title {
+    margin: 40px auto;
 }
 
 nav {
@@ -232,7 +248,7 @@ nav ul li {
 .transition--enter-active {
     opacity: 1;
     transform: translateY(0);
-    transition: var(--in-duration) var(--ease);
+    transition: transform var(--in-duration) var(--ease), opacity var(--in-duration) ease;
 }
 
 .transition--exit-active {
