@@ -78,12 +78,20 @@ body {
     overflow: hidden;
 }
 
-main {
-    overflow: hidden;
+.main-content {
+    position: relative;
+    height: 100vh;
+    overflow-x: hidden;
+    transition: var(--out-duration) var(--ease);
+    box-shadow: 0 0 50px rgba(0,0,0,0.2);
+}
+
+.main-content-border {
+    border-radius: 4px;
 }
 
 .background-image {
-    position: absolute;
+    position: fixed;
     background: linear-gradient(15deg, rgb(47, 51, 54) 0%, rgb(18, 24, 29) 70%);;
     width: 100vw;
     height: 100%;
@@ -153,6 +161,7 @@ nav ul li {
     bottom: 5%;
     margin-left: auto;
     cursor: pointer;
+    pointer-events: auto;
     transition: 0.8s var(--ease);
 }
 
@@ -216,18 +225,6 @@ nav ul li {
     content: "";
 }
 
-.main-content {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-    transition: var(--out-duration) var(--ease);
-    box-shadow: 0 0 50px rgba(0,0,0,0.2);
-}
-
-.main-content-border {
-    border-radius: 4px;
-}
-
 .cta-wrapper {
     display: flex;
     justify-content: center;
@@ -238,6 +235,7 @@ nav ul li {
 /* Animation Classes for JavaScript */
 .navigation-menu-scale {
     transform: scale(0.7);
+    pointer-events: none;
 }
 
 .transition--enter {
