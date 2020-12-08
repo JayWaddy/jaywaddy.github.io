@@ -66,8 +66,9 @@ function animateContentOut() {
     window.addEventListener("touchend", function(event) {
         touchEnd = event.changedTouches[0].screenY;
         touchDifference = Math.abs(touchStart - touchEnd);
+        animateContentOut();
         if ((touchStart > touchEnd) && (touchDifference > 30)) setTimeout(() => {
             if (window.location.pathname === "/") window.location.pathname = "/work.html";
         }, 500);
     });
-})();
+});

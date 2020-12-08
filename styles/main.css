@@ -94,7 +94,7 @@ body {
     position: fixed;
     background: linear-gradient(15deg, rgb(47, 51, 54) 0%, rgb(18, 24, 29) 70%);;
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     margin: auto;
     top: 0;
 }
@@ -107,7 +107,7 @@ body {
     width: var(--wrapper-width);
 }
 
-.header {
+.logo {
     position: fixed;
     display: flex;
     align-items: center;
@@ -115,8 +115,14 @@ body {
     z-index: 10;
 }
 
-.header span {
-    margin-left: 10px;
+.logo span {
+    margin-left: 30px;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
 }
 
 .page-section {
@@ -154,11 +160,10 @@ nav ul li {
     display: flex;
     justify-content: flex-end;
     width: 100%;
+    height: 25px;
 }
 
 .menu-icon {
-    position: fixed;
-    bottom: 5%;
     margin-left: auto;
     cursor: pointer;
     pointer-events: auto;
@@ -200,28 +205,32 @@ nav ul li {
 .scroll-icon-wrapper {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-top: 100px;
+    margin: 100px auto 0 auto;
 }
 
 .scroll-icon {
     position: relative;
     display: flex;
     justify-content: center;
-    width: 20px;
-    height: 36px;
+    background: rgba(255, 255, 255, 0.2);
+    width: 15px;
+    height: 15px;
+    margin: 20px auto 0 auto;
     border: solid var(--text) 2px;
     border-radius: 100px;
-    content: "";
+    animation: swipe-up 4s var(--ease) infinite;
 }
 
 .scroll-icon-ball {
+    display: none;
     background: var(--text);
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
     margin-top: 6px;
     border-radius: 100%;
-    animation: scroll-icon 5s ease infinite;
+    animation: scroll-icon 5s var(--ease) infinite;
     content: "";
 }
 
@@ -230,6 +239,12 @@ nav ul li {
     justify-content: center;
     width: 270px;
     margin: 40px auto 0 auto;
+}
+
+footer {
+    position: fixed;
+    bottom: 5%;
+    right: 7.5%;
 }
 
 /* Animation Classes for JavaScript */
@@ -261,4 +276,20 @@ nav ul li {
     30% { transform: translateY(18px); }
     70% { transform: translateY(18px); }
     100% { transform: translateY(0); }
+}
+
+@keyframes swipe-up {
+    0% { 
+        height: 45px; 
+        opacity: 0;
+        transform: translateY(100%) ;
+    }
+    30% { 
+        height: 15px; 
+        opacity: 1; 
+        transform: translateY(0);
+    }
+    40% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
 }
