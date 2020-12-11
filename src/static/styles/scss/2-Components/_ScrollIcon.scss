@@ -1,0 +1,35 @@
+.scroll-icon-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 80% auto 0 auto;
+}
+
+.scroll-icon-wrapper p {
+    opacity: 0.5;
+}
+
+.scroll-icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    width: 15px;
+    height: 15px;
+    margin: 20px auto 0 auto;
+    border: solid var(--text) 2px;
+    border-radius: 100px;
+    animation: swipe-up 4s var(--ease) infinite;
+}
+
+.scroll-icon-ball {
+    display: none;
+    background: var(--text);
+    width: 4px;
+    height: 4px;
+    margin-top: 6px;
+    border-radius: 100%;
+    animation: scroll-icon 5s var(--ease) infinite;
+    content: "";
+}

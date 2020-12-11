@@ -1,0 +1,21 @@
+.navigation-menu-scale {
+    transform: scale(0.7);
+    pointer-events: none;
+}
+
+.transition--enter {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.transition--enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform var(--in-duration) var(--ease), opacity var(--in-duration) ease 0.5s;
+}
+
+.transition--exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition:  transform var(--out-duration) var(--ease), opacity 0.3s var(--ease);
+}

@@ -1,0 +1,22 @@
+nav {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: var(--wrapper-width);
+    bottom: 5%;
+}
+
+nav ul  {
+    margin: 0 auto;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+nav ul li {
+    display: inline-block;
+}

@@ -1,0 +1,22 @@
+@keyframes scroll-icon {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(18px); }
+    70% { transform: translateY(18px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes swipe-up {
+    0% { 
+        height: 55px; 
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    10% { height: 15px; opacity: 1;}
+    15% { height: 15px; opacity: 1;}
+    30% { 
+        height: 15px; 
+        opacity: 0; 
+        transform: translateY(0);
+    }
+    100% { opacity: 0; }
+}

@@ -1,0 +1,36 @@
+.logo {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top: 3%;
+    z-index: 10;
+}
+
+.logo span {
+    margin-left: 30px;
+}
+
+.main-content {
+    position: relative;
+    height: 100vh;
+    overflow-x: hidden;
+    transition: var(--out-duration) var(--ease);
+    box-shadow: 0 0 50px rgba(0,0,0,0.2);
+}
+
+.main-content-border {
+    border-radius: 4px;
+}
+
+.background-image {
+    position: fixed;
+    background: linear-gradient(15deg, rgb(47, 51, 54) 0%, rgb(18, 24, 29) 70%);;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    top: 0;
+}
+
+.page-section-title {
+    margin: 40px auto;
+}

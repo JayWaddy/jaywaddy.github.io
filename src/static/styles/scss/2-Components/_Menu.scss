@@ -1,0 +1,45 @@
+.menu-icon-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 25px;
+}
+
+.menu-icon {
+    margin-left: auto;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: 0.8s var(--ease);
+}
+
+.menu-icon span {
+    display: flex;
+    width: 25px;
+    height: 2px;
+    background: var(--text);
+    content: "";
+    transition: 0.5s var(--ease);
+}
+
+.menu-icon span:nth-child(2) {
+    margin: 6px 0;
+}
+
+.close-menu-icon {
+    width: 25px;
+    transform: rotate(-90deg);
+}
+
+.close-menu-icon span:first-child {
+    width: 0;
+    opacity: 0;
+}
+
+.close-menu-icon span:nth-child(2) {
+    margin: 0;
+    transform: rotate(45deg);
+}
+
+.close-menu-icon span:last-child {
+    transform: rotate(-45deg) translate(1px, -1px);
+}

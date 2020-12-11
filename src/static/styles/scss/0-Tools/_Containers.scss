@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    overflow: hidden;
+}
+
+.main-content {
+    position: relative;
+    height: 100vh;
+    overflow-x: hidden;
+    transition: var(--out-duration) var(--ease);
+    box-shadow: 0 0 50px rgba(0,0,0,0.2);
+}
+
+.main-content-border {
+    border-radius: 4px;
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: var(--wrapper-width);
+}
+
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    margin-top: 100px;
+}
